@@ -1,0 +1,75 @@
+// Заголовки, общие БЄМ блоки и проче...
+.button {
+	background-color: $blueColor;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: rem(262);
+	height: rem(82);
+	color: #ffffff;
+	border-radius: rem(8);
+	font-size: rem(22);
+	line-height: math.div(36, 22);
+	transition: all 0.3s ease 0s;
+
+	&_small {
+		width: rem(141);
+		height: rem(44);
+		font-size: rem(12);
+		line-height: math.div(19, 12);
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			border: 1px solid $blueColor;
+			background-color: #ffffff;
+			color: $blueColor;
+		}
+	}
+
+	&_light {
+		background-color: #ffffff;
+		color: $blueColor;
+		border-radius: rem(15);
+		@media (any-hover: hover) {
+			&:hover {
+				border: 1px solid #ffffff;
+				background-color: $blueColor;
+				color: #ffffff;
+			}
+		}
+	}
+
+	@media (max-width: $mobile) {
+		font-size: rem(15);
+		width: rem(175);
+		height: rem(54);
+	}
+}
+
+//========================================================================================================================================================
+
+.title {
+	@include adaptiveValue("font-size", 54, 31);
+	line-height: math.div(65, 54);
+	font-weight: 900;
+	color: $veryDarkGray;
+	// max-width: 711px;
+}
+
+.sub-title {
+}
+
+.text {
+	@include adaptiveValue("font-size", 18, 15);
+	line-height: math.div(32, 18);
+}
+
+[data-watch="navigator"] {
+	opacity: 0;
+	transform: translate(0, 50px);
+	&._watcher-view {
+		opacity: 1;
+		transform: translate(0, 0);
+		transition: all 0.8s ease 0s;
+	}
+}
